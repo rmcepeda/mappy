@@ -35,7 +35,7 @@
         var geojson = Sheetsee.createGeoJSON(data, opts)
         var plytemplate = "<h4>{{description}}</h4>"
         var shapesmap = Sheetsee.loadMap("shapesmap")
-        Sheetsee.addTileLayer(shapesmap, 'mapbox.streets')
+        Sheetsee.addTileLayer(shapesmap, 'jllord.n7aml2bc')
         Sheetsee.addMarkerLayer(geojson, shapesmap, plytemplate)
       }
        
