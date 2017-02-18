@@ -20,7 +20,7 @@
     a {border: none;}
   </style>
   <body>
-    <div id="map"></div>
+    <div id="shapesmap"></div>
 
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
@@ -31,16 +31,15 @@
       })
 
       function showInfo(data) {
-        var geoJSON = Sheetsee.createGeoJSON(data)
-        var map = Sheetsee.loadMap("map")
-        // Try different map tiles? examples.map-20v6611k
-        // examples.map-y7l23tes
-        // examples.map-h67hf2ic
-        // examples.map-i86nkdio
-        // examples.h186knp8
-        Sheetsee.addTileLayer(map, 'jllord.n7aml2bc')
-       
+        var opts = ['description']
+        var geojson = Sheetsee.createGeoJSON(data, opts)
+        var plytemplate = "<h4>{{description}}</h4>"
+        var shapesmap = Sheetsee.loadMap("shapesmap")
+        Sheetsee.addTileLayer(shapesmap, 'jllord.n7aml2bc')
+        Sheetsee.addMarkerLayer(geojson, shapesmap, plytemplate)
       }
+       
+  
     </script>
   </body>
 </html>
