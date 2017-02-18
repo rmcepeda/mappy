@@ -26,14 +26,14 @@
       document.addEventListener('DOMContentLoaded', function() {
         // see how what the example spreadsheet looks like:
         // https://docs.google.com/spreadsheet/lv?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc
-        var URL = "1jOz6yFY5nIDre5RYtVROYPgIbkgh9lIddsyXo0-79_0"
+        var URL = "1JJKtPl39OgcSPkj_CL5jHgY2SUt4Q6wMEwHNTY0hLgQ"
         Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
       })
 
       function showInfo(data) {
-        var opts = ['description']
+        var opts = ['PROJECT_COUNT']
         var geojson = Sheetsee.createGeoJSON(data, opts)
-        var plytemplate = "<h4>{{description}}</h4>"
+        var plytemplate = "<h4>{{PROJECT_COUNT}}</h4>"
         var shapesmap = Sheetsee.loadMap("shapesmap")
         Sheetsee.addTileLayer(shapesmap, 'mapbox.satellite')
         Sheetsee.addMarkerLayer(geojson, shapesmap, plytemplate)
