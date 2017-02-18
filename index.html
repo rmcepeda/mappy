@@ -31,12 +31,7 @@
       })
 
       function showInfo(data) {
-        // the column headers of the info you want in your popup
-        var optionsJSON = ["ADDRESS", "UNIT_TYPE"]
-        // an html template for your popup
-        var template + "<li><h4>{{ADDRESS}}</h4></li></ul>"
-                     + "<li><h4>{{UNIT_TYPE}}</h4></li></ul>"
-        var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
+        var geoJSON = Sheetsee.createGeoJSON(data)
         var map = Sheetsee.loadMap("map")
         // Try different map tiles? examples.map-20v6611k
         // examples.map-y7l23tes
@@ -44,7 +39,7 @@
         // examples.map-i86nkdio
         // examples.h186knp8
         Sheetsee.addTileLayer(map, 'jllord.n7aml2bc')
-        Sheetsee.addMarkerLayer(geoJSON, map, template)
+       
       }
     </script>
   </body>
